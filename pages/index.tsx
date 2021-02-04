@@ -27,7 +27,10 @@ export default function Home() {
         </Heading>
         <UnorderedList spacing={4}>
           <ListItem>
-            you can only get a sticker by finding me IRL
+            yes, i literally have an NFC chip in my hand and you can scan it with your phone
+          </ListItem>
+          <ListItem>
+            you can only get a sticker by finding <Pill prefix="❏">matts</Pill> IRL
             <UnorderedList>
               <ListItem>find me personally and scan my hand, or</ListItem>
               <ListItem>
@@ -46,7 +49,14 @@ export default function Home() {
             <Pill prefix="❏">matts</Pill> are the first non-fungible social token
           </ListItem>
           <ListItem>
-            ...and maybe something special will come to those who own a <Pill prefix="❏">matt</Pill>
+            <Pill prefix="❏">matts</Pill> are distributed with gas-less metatransactions via{' '}
+            <Link href="https://drop.nifi.es" isExternal>
+              <Pill prefix="📦">drop.nifi.es</Pill>
+            </Link>
+          </ListItem>
+          <ListItem>
+            ...and maybe something special will come to those who own a <Pill prefix="❏">matt</Pill>{' '}
+            .
           </ListItem>
         </UnorderedList>
       </VStack>
