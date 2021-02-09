@@ -1,5 +1,6 @@
 {
   "name": "buddha matt",
   "description": "you rub the matt's head and good luck befalls you",
+  "decimals": 2,
   "image": "https://themanymatts.lol/images/buddha.png"
 }

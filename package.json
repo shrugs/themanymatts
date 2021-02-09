@@ -21,6 +21,7 @@
     "@emotion/styled": "^11.0.0",
     "ajv": "^7.0.4",
     "dotenv": "^8.2.0",
+    "ethers": "^5.0.30",
     "framer-motion": "^3.2.2-rc.1",
     "jsonwebtoken": "^8.5.1",
     "next": "10.0.6",

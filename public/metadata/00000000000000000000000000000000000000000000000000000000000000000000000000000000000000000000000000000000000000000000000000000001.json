@@ -1,5 +1,6 @@
 {
   "name": "bagel matt",
   "description": "matt's joy is your joy. grab a bagel and enjoi.",
+  "decimals": 2,
   "image": "https://themanymatts.lol/images/bagel.png"
 }
