@@ -13,6 +13,7 @@ import { Pill } from 'client/components/Pill';
 import { Sticker } from 'client/components/Sticker';
 import { useMobileScrollLock } from 'client/lib/useMobileScrollLock';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import { useRef, useState } from 'react';
 
 export default function Home() {
@@ -23,9 +24,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
       <Portal>
         <Box ref={container} position="fixed" top={0} left={0} height="full" width="full">
           <Box position="relative" height="full" width="full" maxWidth="2xl" mx="auto">
