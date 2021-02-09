@@ -38,6 +38,7 @@ export function Sticker({
       drag
       dragConstraints={container}
       dragElastic={1}
+      whileHover={{ scale: 1.1 }}
       onTouchStartCapture={() => setDragging(true)}
       onTouchEndCapture={() => setDragging(false)}
     />

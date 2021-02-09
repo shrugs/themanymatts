@@ -26,9 +26,22 @@ export default function Home() {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <Portal>
+        <Box ref={container} position="fixed" top={0} left={0} height="full" width="full">
+          <Box position="relative" height="full" width="full" maxWidth="2xl" mx="auto">
+            <Box position="absolute" zIndex="overlay" top="2rem" right="-2rem">
+              <Sticker name="bagel" size={48} container={container} setDragging={setLock} />
+            </Box>
+            <Box position="absolute" zIndex="overlay" left="0" top="24rem">
+              <Sticker name="bagel" size={32} container={container} setDragging={setLock} />
+            </Box>
+            <Box position="absolute" zIndex="overlay" top="32rem" right="-8rem">
+              <Sticker name="buddha" size={64} container={container} setDragging={setLock} />
+            </Box>
+          </Box>
+        </Box>
+      </Portal>
       <VStack
-        ref={container}
-        position="relative"
         minHeight="100vh"
         py={16}
         spacing={16}
@@ -37,15 +50,6 @@ export default function Home() {
         mx="auto"
         overflowX="hidden"
       >
-        <Box position="absolute" zIndex="overlay" top="2rem" right="-2rem">
-          <Sticker name="bagel" size={48} container={container} setDragging={setLock} />
-        </Box>
-        <Box position="absolute" zIndex="overlay" left="0" top="24rem">
-          <Sticker name="bagel" size={32} container={container} setDragging={setLock} />
-        </Box>
-        <Box position="absolute" zIndex="overlay" top="32rem" right="-8rem">
-          <Sticker name="buddha" size={64} container={container} setDragging={setLock} />
-        </Box>
         <VStack px={8} spacing={16} align="start">
           <Heading as="h1" fontSize={['2xl', '3xl', '4xl', '5xl']}>
             <Pill prefix="✋">themanymatts</Pill>
