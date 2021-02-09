@@ -25,7 +25,15 @@ export default function Home() {
   return (
     <>
       <Portal>
-        <Box ref={container} position="fixed" top={0} left={0} height="full" width="full">
+        <Box
+          ref={container}
+          position="fixed"
+          top={0}
+          left={0}
+          height="full"
+          width="full"
+          pointerEvents="none"
+        >
           <Box position="relative" height="full" width="full" maxWidth="2xl" mx="auto">
             <Box position="absolute" zIndex="overlay" top="2rem" right="-2rem">
               <Sticker name="bagel" size={48} container={container} setDragging={setLock} />
