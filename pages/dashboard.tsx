@@ -53,7 +53,7 @@ function Dashboard() {
       width="full"
       maxWidth="2xl"
       mx="auto"
-      align="start"
+      align="stretch"
       alignItems="stretch"
     >
       <Heading as="h1" textAlign="center">
@@ -67,7 +67,7 @@ function Dashboard() {
           as="form"
           id="form"
           onSubmit={onSubmit}
-          align="start"
+          align="stretch"
           alignItems="stretch"
           spacing={8}
         >

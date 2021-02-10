@@ -55,8 +55,9 @@ export default function Home() {
         maxWidth="2xl"
         mx="auto"
         overflowX="hidden"
+        align="stretch"
       >
-        <VStack px={8} spacing={16} align="start">
+        <VStack px={8} spacing={16} align="stretch">
           <Heading as="h1" fontSize={['2xl', '3xl', '4xl', '5xl']}>
             <Pill prefix="✋">themanymatts</Pill>
           </Heading>
@@ -72,7 +73,7 @@ export default function Home() {
           </Heading>
         </VStack>
         <Divider />
-        <VStack px={8} spacing={8} align="start">
+        <VStack px={8} spacing={8} align="stretch" lineHeight="taller">
           <Heading as="h3">wut on earth</Heading>
           <Heading as="h4" fontSize="base" lineHeight="tall" fontWeight="normal">
             themanymatts are rare digital stickers, proof-of-matt-proximity, and weird art objects.
@@ -113,7 +114,7 @@ export default function Home() {
           </UnorderedList>
         </VStack>
         <Divider />
-        <VStack align="start" spacing={8} px={8}>
+        <VStack align="stretch" spacing={4} px={8}>
           <Heading as="h3">gotta hand it to &apos;em</Heading>
           <Text textStyle="highlightable" lineHeight="taller">
             <Pill prefix="✋">themanymatts</Pill> is a{' '}
@@ -124,7 +125,17 @@ export default function Home() {
             <Link href="https://twitter.com/mattgcondon" isExternal>
               <Pill prefix="🐦">Matt Condon</Pill>
             </Link>
-            . You can view, edit, and audit the code on{' '}
+            .
+          </Text>
+          <Text textStyle="highlightable" lineHeight="taller">
+            You can view and audit the code on{' '}
+            <Link href="https://etherscan.io/token/themanymatts.eth">
+              <Pill prefix="🔎">Etherscan</Pill>
+            </Link>
+            .
+          </Text>
+          <Text textStyle="highlightable" lineHeight="taller">
+            You can view, edit, and audit the code on{' '}
             <Link href="https://github.com/shrugs/themanymatts" isExternal>
               <Pill prefix="📂">GitHub</Pill>
             </Link>
