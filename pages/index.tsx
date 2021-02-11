@@ -36,8 +36,8 @@ export default function Home() {
             <Box position="absolute" zIndex="overlay" top="2rem" right="-2rem">
               <Sticker name="bagel" size={48} container={container} setDragging={setLock} />
             </Box>
-            <Box position="absolute" zIndex="overlay" left="0" top="24rem">
-              <Sticker name="bagel" size={32} container={container} setDragging={setLock} />
+            <Box position="absolute" zIndex="overlay" left="0" top="22rem">
+              <Sticker name="piracy" size={32} container={container} setDragging={setLock} />
             </Box>
             <Box position="absolute" zIndex="overlay" top="32rem" right="-8rem">
               <Sticker name="buddha" size={64} container={container} setDragging={setLock} />
