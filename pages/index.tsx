@@ -67,7 +67,7 @@ export default function Home() {
             find him IRL.
           </Heading>
           <Heading as="h2" fontSize="md" lineHeight="tall">
-            there are many <Pill prefix="❏">matts</Pill>, but one of them could be yours.
+            there are many <Pill prefix="❏">matts</Pill>, and one of them could be yours.
           </Heading>
         </VStack>
         <Divider />

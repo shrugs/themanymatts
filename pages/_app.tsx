@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <NextSeo
         title="✋ themanymatts"
         description="Matt Condon has a chip in his hand that dispenses rare, digital matt stickers... but only if you
-            find him IRL. There are many matts, but one could be yours."
+            find him IRL. There are many matts, and one could be yours."
         openGraph={{
           site_name: '✋ themanymatts',
           // images: [
