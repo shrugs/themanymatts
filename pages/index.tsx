@@ -76,6 +76,14 @@ export default function Home() {
           <Heading as="h4" fontSize="base" lineHeight="tall" fontWeight="normal">
             themanymatts are rare digital stickers, proof-of-matt-proximity, and weird art objects.
           </Heading>
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/8rT1wB4lZ9s"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <UnorderedList spacing={4}>
             <ListItem>
               yes, i literally have an NFC chip in my hand and you can scan it with your phone
