@@ -61,7 +61,12 @@ function Dashboard() {
       </Heading>
 
       {token ? (
-        <Link href={`https://drop.nifti.es/${token}`}>Copy me</Link>
+        <VStack spacing={4}>
+          <Link href={`https://drop.nifti.es/${token}`}>Copy me</Link>
+          <Button onClick={onSubmit} isLoading={loading} loadingText="Generating">
+            Generate Another
+          </Button>
+        </VStack>
       ) : (
         <VStack
           as="form"
