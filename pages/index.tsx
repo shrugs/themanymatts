@@ -33,7 +33,7 @@ export default function Home() {
           pointerEvents="none"
         >
           <Box position="relative" height="full" width="full" maxWidth="2xl" mx="auto">
-            <Box position="absolute" zIndex="overlay" top="2rem" right="-2rem">
+            <Box position="absolute" zIndex="overlay" top="1rem" right="-2rem">
               <Sticker name="bagel" size={48} container={container} setDragging={setLock} />
             </Box>
             <Box position="absolute" zIndex="overlay" left="0" top="22rem">
