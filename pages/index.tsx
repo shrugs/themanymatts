@@ -12,8 +12,6 @@ import {
 import { Pill } from 'client/components/Pill';
 import { Sticker } from 'client/components/Sticker';
 import { useMobileScrollLock } from 'client/lib/useMobileScrollLock';
-import Head from 'next/head';
-import { NextSeo } from 'next-seo';
 import { useRef, useState } from 'react';
 
 export default function Home() {
