@@ -109,8 +109,8 @@ export default function Home() {
             </ListItem>
             <ListItem>
               <Pill prefix="❏">matts</Pill> are distributed with gas-less metatransactions via{' '}
-              <Link href="https://drop.nifi.es" isExternal>
-                <Pill prefix="📦">drop.nifi.es</Pill>
+              <Link href="https://drop.nifti.es" isExternal>
+                <Pill prefix="📦">drop.nifti.es</Pill>
               </Link>
             </ListItem>
             <ListItem>
