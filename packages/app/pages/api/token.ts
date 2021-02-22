@@ -16,6 +16,7 @@ const ITEMS = {
   '0x0': 1,
   '0x1': 2,
   '0x2': 3,
+  '0x3': 4,
 };
 
 export default function token(req: NextApiRequest, res: NextApiResponse) {
