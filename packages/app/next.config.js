@@ -10,4 +10,7 @@ module.exports = withPlugins([], {
 
   // env variables to propagate to the client (public info)
   env: {},
+  future: {
+    webpack5: true,
+  },
 });

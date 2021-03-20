@@ -1,5 +1,5 @@
 {
-  "name": "themanymatts",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,21 +21,23 @@
     "@emotion/styled": "^11.0.0",
     "ajv": "^7.0.4",
     "dotenv": "^8.2.0",
+    "eckles": "^1.4.1",
     "ethers": "^5.0.30",
     "framer-motion": "^3.2.2-rc.1",
-    "jsonwebtoken": "^8.5.1",
+    "jose": "^3.10.0",
     "next": "10.0.6",
     "next-compose-plugins": "^2.2.1",
     "next-seo": "^4.19.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-use-clipboard": "^1.0.7",
+    "rfc4648": "^1.4.0",
     "use-persisted-state": "^0.3.3",
     "weighted": "^0.3.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/jest": "^26.0.20",
-    "@types/jsonwebtoken": "^8.5.0",
     "@types/mocha": "^8.2.0",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
