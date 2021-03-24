@@ -149,7 +149,7 @@ function Dashboard() {
           {isCopied
             ? 'Copied 🤙'
             : token
-            ? `Click to copy URL: (${token?.slice(0, 8)}...)`
+            ? `Click to copy URL: (...${token?.slice(token.length - 8, token.length)})`
             : `Generate a token first`}
         </Button>
 
