@@ -20,7 +20,7 @@ import Eckles from 'eckles';
 import { ethers } from 'ethers';
 import { parseJwk } from 'jose/jwk/parse';
 import { SignJWT } from 'jose/jwt/sign';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import useClipboard from 'react-use-clipboard';
 import createPersistedState from 'use-persisted-state';
 import weighted from 'weighted';
@@ -96,6 +96,8 @@ function Dashboard() {
     successDuration: 1000,
   });
 
+  const validTokenIds = useMemo(() => tokenIds.filter(Boolean).filter(isHexString), [tokenIds]);
+
   const onSubmit = useCallback(
     async (e) => {
       e.preventDefault();
@@ -104,7 +106,7 @@ function Dashboard() {
       setToken(null);
       try {
         // select a token id, exponentially weighted
-        const items = toExponentialWeights(tokenIds.filter(Boolean).filter(isHexString));
+        const items = toExponentialWeights(validTokenIds);
         const id = weighted(items) as string;
 
         // build the token
@@ -118,8 +120,10 @@ function Dashboard() {
         setLoading(false);
       }
     },
-    [issuer, secret, tokenIds],
+    [issuer, secret, validTokenIds],
   );
+
+  const canGenerate = validTokenIds.length > 0 && issuer && secret;
 
   return (
     <VStack
@@ -153,7 +157,13 @@ function Dashboard() {
             : `Generate a token first`}
         </Button>
 
-        <Button type="submit" form="form" isLoading={loading} loadingText="Generating">
+        <Button
+          type="submit"
+          form="form"
+          isLoading={loading}
+          loadingText="Generating"
+          isDisabled={!canGenerate}
+        >
           Generate
         </Button>
 
