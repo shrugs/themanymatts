@@ -11,7 +11,6 @@ import {
   Input,
   ListItem,
   OrderedList,
-  Text,
   Textarea,
   VStack,
 } from '@chakra-ui/react';
@@ -123,7 +122,7 @@ function Dashboard() {
     [issuer, secret, validTokenIds],
   );
 
-  const canGenerate = validTokenIds.length > 0 && issuer && secret;
+  const canGenerate = validTokenIds.length > 0 && !!issuer && !!secret;
 
   return (
     <VStack
@@ -157,15 +156,18 @@ function Dashboard() {
             : `Generate a token first`}
         </Button>
 
-        <Button
-          type="submit"
-          form="form"
-          isLoading={loading}
-          loadingText="Generating"
-          isDisabled={!canGenerate}
-        >
-          Generate
-        </Button>
+        {/* IDK why asr is needed here, but emotion isn't happy about it */}
+        {asr && (
+          <Button
+            type="submit"
+            form="form"
+            isLoading={loading}
+            loadingText="Generating"
+            isDisabled={!canGenerate}
+          >
+            Generate
+          </Button>
+        )}
 
         <Divider />
 
@@ -204,7 +206,7 @@ function Dashboard() {
 
         <FormControl id="secret">
           <FormLabel>Secret</FormLabel>
-          <Textarea type="password" value={secret} onChange={(e) => setSecret(e.target.value)} />
+          <Textarea value={secret} onChange={(e) => setSecret(e.target.value)} />
         </FormControl>
 
         {error && (
