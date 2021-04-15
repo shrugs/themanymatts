@@ -206,7 +206,11 @@ function Dashboard() {
 
         <FormControl id="secret">
           <FormLabel>Secret</FormLabel>
-          <Textarea value={secret} onChange={(e) => setSecret(e.target.value)} />
+          <Textarea
+            value={secret}
+            onChange={(e) => setSecret(e.target.value)}
+            placeholder={'-----BEGIN EC PRIVATE KEY-----\n\n-----END EC PRIVATE KEY-----'}
+          />
         </FormControl>
 
         {error && (
