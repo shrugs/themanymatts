@@ -95,7 +95,9 @@ function Dashboard() {
     successDuration: 1000,
   });
 
-  const validTokenIds = useMemo(() => tokenIds.filter(Boolean).filter(isHexString), [tokenIds]);
+  const validTokenIds = useMemo(() => tokenIds.filter(Boolean).filter((id) => isHexString(id)), [
+    tokenIds,
+  ]);
 
   const onSubmit = useCallback(
     async (e) => {
