@@ -135,7 +135,7 @@ export default function Home() {
           </Text>
           <Text textStyle="highlightable" lineHeight="taller">
             You can view and audit the code on{' '}
-            <Link href="https://etherscan.io/token/themanymatts.eth">
+            <Link href="https://etherscan.io/address/themanymatts.eth">
               <Pill prefix="🔎">Etherscan</Pill>
             </Link>
             .
