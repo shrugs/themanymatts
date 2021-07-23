@@ -14,7 +14,6 @@ import {
   Textarea,
   VStack,
 } from '@chakra-ui/react';
-import { isHexString } from '@ethersproject/bytes';
 import Eckles from 'eckles';
 import { ethers } from 'ethers';
 import { parseJwk } from 'jose/jwk/parse';
@@ -34,7 +33,14 @@ async function signMintGrant(id: string, pem: string, issuer: string) {
   const jwk = await Eckles.import({ pem });
   const key = await parseJwk(jwk, 'ES256');
 
-  return await new SignJWT({ grant: { type: 'mint', ids: [id], amounts: [ONE_WITH_DECIMALS] } })
+  return await new SignJWT({
+    grant: {
+      type: 'mint',
+      ids: [ethers.utils.hexlify(ethers.BigNumber.from(id))],
+      amounts: [ONE_WITH_DECIMALS],
+      assetType: 'eip155:1/erc1155:0x28959cf125ccb051e70711d0924a62fb28eaf186',
+    },
+  })
     .setProtectedHeader({ alg: 'ES256' })
     .setIssuedAt()
     .setIssuer(issuer)
@@ -81,6 +87,15 @@ function useTokenIdsState() {
   return { tokenIds, addTokenId, setAtIndex, removeAtIndex };
 }
 
+function isInteger(i: string) {
+  try {
+    parseInt(i, 10);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 function Dashboard() {
   const asr = useAfterServerRender();
   const { tokenIds, addTokenId, setAtIndex, removeAtIndex } = useTokenIdsState();
@@ -95,9 +110,10 @@ function Dashboard() {
     successDuration: 1000,
   });
 
-  const validTokenIds = useMemo(() => tokenIds.filter(Boolean).filter((id) => isHexString(id)), [
-    tokenIds,
-  ]);
+  const validTokenIds = useMemo(
+    () => tokenIds.filter(Boolean).filter((id: string) => isInteger(id)),
+    [tokenIds],
+  );
 
   const onSubmit = useCallback(
     async (e) => {
