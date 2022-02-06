@@ -16,8 +16,7 @@ import {
 } from '@chakra-ui/react';
 import Eckles from 'eckles';
 import { ethers } from 'ethers';
-import { parseJwk } from 'jose/jwk/parse';
-import { SignJWT } from 'jose/jwt/sign';
+import { importJWK, SignJWT } from 'jose';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import useClipboard from 'react-use-clipboard';
 import createPersistedState from 'use-persisted-state';
@@ -27,18 +26,16 @@ const audience = 'drop.nifti.es';
 const DECIMALS = ethers.BigNumber.from(2);
 const ONE = ethers.BigNumber.from(1);
 const SATS_PER_STICKER = ethers.BigNumber.from(10).pow(DECIMALS);
-const ONE_WITH_DECIMALS = ethers.utils.hexlify(ONE.mul(SATS_PER_STICKER));
+const ONE_WITH_DECIMALS = ONE.mul(SATS_PER_STICKER);
 
 async function signMintGrant(id: string, pem: string, issuer: string) {
   const jwk = await Eckles.import({ pem });
-  const key = await parseJwk(jwk, 'ES256');
+  const key = await importJWK(jwk, 'ES256');
 
   return await new SignJWT({
     grant: {
-      type: 'mint',
-      ids: [ethers.utils.hexlify(ethers.BigNumber.from(id))],
-      amounts: [ONE_WITH_DECIMALS],
-      assetType: 'eip155:1/erc1155:0x28959cf125ccb051e70711d0924a62fb28eaf186',
+      id: `eip155:1/eip1155:0x28959cf125ccb051e70711d0924a62fb28eaf186/${id}`,
+      amount: ONE_WITH_DECIMALS.toString(),
     },
   })
     .setProtectedHeader({ alg: 'ES256' })

@@ -2,7 +2,7 @@ import { Image } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { ComponentPropsWithoutRef, forwardRef, RefObject } from 'react';
 
-const MotionImage = motion.custom(
+const MotionImage = motion(
   forwardRef<HTMLImageElement, ComponentPropsWithoutRef<typeof Image>>(function MotionImage(
     props,
     ref,
@@ -11,6 +11,7 @@ const MotionImage = motion.custom(
       Object.entries(props).filter(([key]) => !isValidMotionProp(key)),
     );
 
+    // eslint-disable-next-line jsx-a11y/alt-text
     return <Image ref={ref} {...chakraProps} />;
   }),
 );
