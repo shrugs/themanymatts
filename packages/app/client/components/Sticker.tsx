@@ -2,7 +2,7 @@ import { Image } from '@chakra-ui/react';
 import { isValidMotionProp, motion } from 'framer-motion';
 import { ComponentPropsWithoutRef, forwardRef, RefObject } from 'react';
 
-const MotionImage = motion(
+const MotionImage = motion.custom(
   forwardRef<HTMLImageElement, ComponentPropsWithoutRef<typeof Image>>(function MotionImage(
     props,
     ref,

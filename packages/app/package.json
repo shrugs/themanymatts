@@ -16,14 +16,14 @@
     }
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.3",
+    "@chakra-ui/react": "1.2.1",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "ajv": "^8.10.0",
     "dotenv": "^16.0.0",
     "eckles": "^1.4.1",
     "ethers": "^5.5.4",
-    "framer-motion": "^6.2.4",
+    "framer-motion": "3.2.2-rc.1",
     "jose": "^4.4.0",
     "next": "12.0.10",
     "next-compose-plugins": "^2.2.1",
