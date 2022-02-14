@@ -67,10 +67,10 @@ function useAfterServerRender() {
 function useTokenIdsState() {
   const [tokenIds, setTokenIds] = _useTokenIdsState<string[]>([EMPTY_TOKEN_ID]);
 
-  const addTokenId = useCallback(() => setTokenIds([...tokenIds, EMPTY_TOKEN_ID]), [
-    setTokenIds,
-    tokenIds,
-  ]);
+  const addTokenId = useCallback(
+    () => setTokenIds([...tokenIds, EMPTY_TOKEN_ID]),
+    [setTokenIds, tokenIds],
+  );
   const removeAtIndex = useCallback(
     (index: number) => setTokenIds((ids) => [...ids.slice(0, index), ...ids.slice(index + 1)]),
     [setTokenIds],
