@@ -10007,10 +10007,10 @@ next-compose-plugins@^2.2.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
   integrity sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==
 
-next-seo@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.1.0.tgz#aa9fd6249a11bf93e6da06fa2a6bc89268936edf"
-  integrity sha512-ampuQfNTOi1x+xtRIb6CZGunIo6rQXtMo2Tyu861d5GjJFIwfOXsA4lzCa4+e2rLkyXDyVpavNNUZWa3US9ELw==
+next-seo@4.19.0:
+  version "4.19.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.19.0.tgz#b3be79a544e420dbbf1e4fcff98dad9790f15e36"
+  integrity sha512-+jgXd1UW0XKLiBMrumjPDANeV82mTHTxGZJwU6T1mlNougKpXINlDgIHkN30sM2eDXh+xXOURj99WN2Tm9K6rg==
 
 next-tick@~1.0.0:
   version "1.0.0"
