@@ -2,8 +2,7 @@ import { extendTheme, ThemeOverride } from '@chakra-ui/react';
 
 const highlightable = { _selection: { backgroundColor: 'highlight' } };
 
-// @ts-expect-error
-const override: ThemeOverride = {
+const override = {
   fonts: {
     body: "'DM Sans', sans-serif",
     heading: "'DM Sans', sans-serif",
